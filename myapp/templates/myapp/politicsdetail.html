@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %} 
+{% load static %} 
+{% block x1 %}  
+
+
+<h2>{{politics.title}}</h2>
+<small>{{politics.date}}</small>
+<hr>
+<img src="{{politics.image.url}}" class="img-fluid" alt="..." height="400px" width="400">
+
+<br>
+<p>
+{{politics.content}}
+
+</p>
+
+
+
+
+
+
+
+{% endblock x1 %}
+
+ 

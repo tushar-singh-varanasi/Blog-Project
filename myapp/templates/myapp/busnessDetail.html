@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %} 
+{% load static %} 
+{% block x1 %}  
+
+
+<h2>{{business.title}}</h2>
+<small>{{business.date}}</small>
+<hr>
+<img src="{{business.image.url}}" class="img-fluid" alt="..." height="400px" width="400px">
+
+<br>
+<p>
+{{business.content}}
+
+</p>
+
+
+
+
+
+
+
+{% endblock x1 %}

@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %} 
+{% load static %} 
+{% block x1 %}    
+<img src="{% static 'image/pexels-nappy-936137.jpg' %}" alt="" height="400" width="1500px">
+<hr>
+<div class="row">
+  {% for x in forms %}
+  
+
+    <div class="col-3">
+       <!-- yaha se card start hoga -->
+       <div class="card" style="width: 18rem;">
+           <img src="{{x.image.url}}" class="card-img-top" alt="..." height="150px">
+           <div class="card-body">
+             <h5 class="card-title">{{x.title}}</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="{% url 'busnessdetail' x.slug %}" class="btn btn-primary">read more</a>
+           </div>
+         </div>
+    </div>
+   {% endfor %}
+</div>
+    
+    {% endblock x1 %}
+   

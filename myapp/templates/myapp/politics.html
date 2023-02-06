@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %} 
+{% load static %} 
+{% block x1 %}    
+
+<img src="{% static 'image/pexels-element-digital-1550337.jpg' %}" alt="" height="400px" width="1500px">
+<br>
+<div class="row">
+{% for x in form %}
+<div class="col-3">
+<div class="card" style="width: 18rem;">
+    <img src="{{x.image.url}}" class="card-img-top" alt="..." height="200px">
+    <div class="card-body">
+      <h5 class="card-title">{{x.title}}</h5>
+      <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt sint minus maxime ex recusanda</p>
+      <a href="{% url 'PoliticsDetail' x.slug %}" class="btn btn-primary">Read_more</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock x1 %}

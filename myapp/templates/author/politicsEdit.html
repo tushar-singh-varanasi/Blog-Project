@@ -1,0 +1,45 @@
+{% extends 'myapp/base.html' %} 
+{% load static %} 
+{% block x1 %} 
+
+
+
+<div class="col-sm-10">
+ <h3 class="text-white my-5">Politics Page</h3> 
+ <a href="{% url 'politics' %}" class="btn btn-success">Add Post</a>
+ <h4 class="text-center alert alert-info mt-3">Show Post Information</h4>
+  {% if form %}
+   <table class="table table-hover table-dark">
+     <thead>
+       <tr class="text-center">
+         <th scope="col" style="width:2%">ID</th>
+         <th scope="col" style="width:28%">Title</th>
+         <th scope="col" style="width:55%">Description</th>
+         <th scope="col" style="width:15%">Action</th>
+       </tr>
+     </thead>
+     <tbody>
+      {% for post in form %}
+       <tr>
+         <th scope="row">{{post.id}}</th>
+         <td>{{post.title}}</td>
+         <td>{{post.content}}</td>
+         <td class="text-center">
+          <a href="{% url 'updatepolitics' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+          <form action="{% url 'deletepolitics' post.id %}" method="post" class="d-inline"> {% csrf_token %}
+          <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+         </form>
+         </td>
+       </tr>
+      {% endfor %}
+     </tbody>
+   </table>
+
+  {% else %}
+   <h4 class="text-center alert alert-warning">No Records</h4>
+  {% endif %}
+</div>
+
+
+
+{% endblock x1 %} 
