@@ -1,5 +1,5 @@
 # Project Name Banaras Times
-this is the Blog website using Django here you can create your own blog using The Admin panel
+this is  Blog website using Django here you can create your own blog using The Admin panel
 # technology used 
 html,css bootstrap,django
 
